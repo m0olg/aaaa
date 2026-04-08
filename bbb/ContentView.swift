@@ -21,18 +21,21 @@ struct ContentView: View {
                         .font(.system(size: 17, weight: .semibold))
                     Spacer()
                 }
-                padding(.leading, 25)
+                .padding(.leading, 25)
                 Spacer()
             }
             VStack() {
                 Text("학교 도서관을 더 쉽게 사용하는 방법")
-                    .foregroundColor(Color.white)
+                    .foregroundColor(.white) // 문맥상 타입이 Color라는 걸 알아서 굳이 저걸 안 쳐도 됨
                     .font(.system(size: 17, weight: .bold))
-                    .padding(.bottom, 41) // 밑에 41칸
+
                 
-                Text("책 검색, 대출현황, 좌석예약까지 한 번에 관리하세요")
+                Text("책 검색, 대출현황, 좌석예약까지\n한 번에 관리하세요")
                     .foregroundColor(Color.white)
                     .font(.system(size: 17, weight: .semibold))
+                    .padding(.top, 41)
+                    .padding(.bottom, 64)
+                    .multilineTextAlignment(.center)
                 
                 Text("시작하기")
                     .foregroundColor(Color.white)
@@ -45,4 +48,7 @@ struct ContentView: View {
             
         }
     }
+}
+#Preview {
+    ContentView()
 }
