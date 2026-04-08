@@ -38,12 +38,12 @@ struct ContentView: View {
                     .multilineTextAlignment(.center)
                 
                 Text("시작하기")
+                    .font(.system(size: 17, weight: .bold))
                     .foregroundColor(Color.white)
                     .frame(width: 162, height: 32)
                     .overlay(
                         RoundedRectangle(cornerRadius: 16)
                             .stroke(.white, lineWidth: 2)
-                            .font(.system(size: 17, weight: .bold))
                         )
             }
             
