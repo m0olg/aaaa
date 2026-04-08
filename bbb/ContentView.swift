@@ -12,7 +12,7 @@ struct ContentView: View {
         ZStack() { // 바탕 검정
             Color.black.ignoresSafeArea()
             
-            VStack() {
+            VStack(spacing:0) {
                 HStack() {
                     Image("book_on")
                         .padding(.leading, 9)
