@@ -15,8 +15,8 @@ struct ContentView: View {
             VStack(spacing:0) {
                 HStack(spacing:0) {
                     Image("book_on")
-                        .padding(.leading, 9)
                     Text("Book on")
+                        .padding(.leading, 9)
                         .foregroundColor(Color.white)
                         .font(.system(size: 17, weight: .semibold))
                     Spacer()
@@ -43,6 +43,7 @@ struct ContentView: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 16)
                             .stroke(.white, lineWidth: 2)
+                            .font(.system(size: 17, weight: .bold))
                         )
             }
             
