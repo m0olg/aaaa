@@ -13,7 +13,7 @@ struct ContentView: View {
             Color.black.ignoresSafeArea()
             
             VStack(spacing:0) {
-                HStack() {
+                HStack(spacing:0) {
                     Image("book_on")
                         .padding(.leading, 9)
                     Text("Book on")
@@ -24,7 +24,7 @@ struct ContentView: View {
                 .padding(.leading, 25)
                 Spacer()
             }
-            VStack() {
+            VStack(spacing:0) {
                 Text("학교 도서관을 더 쉽게 사용하는 방법")
                     .foregroundColor(.white) // 문맥상 타입이 Color라는 걸 알아서 굳이 저걸 안 쳐도 됨
                     .font(.system(size: 17, weight: .bold))
