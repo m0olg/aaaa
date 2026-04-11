@@ -8,48 +8,56 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isNext = false
+    
     var body: some View {
-        ZStack() { // 바탕 검정
-            Color.black.ignoresSafeArea()
-            
-            VStack(spacing:0) {
-                HStack(spacing:0) {
-                    Image("book_on")
-                    Text("Book on")
-                        .padding(.leading, 9)
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 17, weight: .semibold))
+        if isNext {
+            NewView()
+        } else {
+            ZStack() {
+                Color.black.ignoresSafeArea()
+                
+                VStack(spacing:0) {
+                    HStack() {
+                        Image("book_on")
+                            .padding(.leading, 9)
+                        Text("Book-on")
+                            .foregroundColor(Color.white)
+                            .font(.system(size:17, weight: .semibold))
+                        Spacer()
+                    }
+                    .padding(.leading, 25)
                     Spacer()
                 }
-                .padding(.leading, 25)
-                Spacer()
+                VStack() {
+                    Text("학교 도서관을 더 쉽게 사용하는 방법")
+                        .foregroundColor(Color.white)
+                        .padding(.bottom, 41)
+                        .font(.system(size: 17, weight: .bold))
+                    
+                    Text("책 검색, 대출현황, 좌석예약까지 \n한 번에 관리하세요")
+                        .foregroundColor(Color.white)
+                        .padding(.bottom, 64)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 17, weight: .semibold))
+                    
+                    Button(action: {
+                        isNext = true
+                    }) {
+                        Text("시작하기")
+                            .foregroundColor(Color.white)
+                            .frame(width: 162, height: 32)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 25)
+                                    .stroke(Color.white, lineWidth: 2)
+                            )
+                    }
+                }
             }
-            VStack(spacing:0) {
-                Text("학교 도서관을 더 쉽게 사용하는 방법")
-                    .foregroundColor(.white) // 문맥상 타입이 Color라는 걸 알아서 굳이 저걸 안 쳐도 됨
-                    .font(.system(size: 17, weight: .bold))
-
-                
-                Text("책 검색, 대출현황, 좌석예약까지\n한 번에 관리하세요")
-                    .foregroundColor(Color.white)
-                    .font(.system(size: 17, weight: .semibold))
-                    .padding(.top, 41)
-                    .padding(.bottom, 64)
-                    .multilineTextAlignment(.center)
-                
-                Text("시작하기")
-                    .font(.system(size: 17, weight: .bold))
-                    .foregroundColor(Color.white)
-                    .frame(width: 162, height: 32)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.white, lineWidth: 2)
-                        )
-            }
-            
         }
     }
 }
 #Preview {
     ContentView()
 }
+
