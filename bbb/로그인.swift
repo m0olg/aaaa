@@ -16,7 +16,7 @@ struct NewView: View {
                 HStack() {
                     Image("book_on")
                         .padding(.leading, 9)
-                    Text("Book on")
+                    Text("Book-on")
                         .foregroundColor(.white)
                         .font(.system(size:17, weight: .semibold))
                     Spacer()
@@ -24,6 +24,7 @@ struct NewView: View {
                 .padding(.leading, 25)
                 Spacer()
             }
+            
             VStack(spacing:0) { // 수직
                 Image("book_on")
                     .padding(.top, 15)
@@ -48,7 +49,9 @@ struct NewView: View {
                     .foregroundColor(Color(red: 102/255, green: 163/255, blue: 255/255))
                     .font(.system(size: 13, weight: .regular))
                     .padding(.bottom, 12)
-                    .padding(.top, 9)
+                    .padding(.top, 15)
+                
+                
             }
             .frame(width: 300, height: 300)
                 .background(
